@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  .font-orbit {
+    font-family: 'Orbit', system-ui, sans-serif;
+  }
+}

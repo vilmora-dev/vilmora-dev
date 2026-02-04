@@ -39,12 +39,3 @@ I'm a passionate **Full-Stack Developer** with a love for creating elegant solut
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 ---
-
-## 📊 GitHub Stats
-
-<div align="center">
-  
-  ![GitHub Stats](https://github-readme-stats.vercel.app/)
-  
-</div>
-

@@ -20,7 +20,7 @@ const incProjects: Project[] = [
     list: ["Built LightGBM/XGBoost/Random Forest models for accurate carbon quantification, integrating ecology research for credibility.",
         "Engineered proprietary dataset from LiDAR + soil/climate data, extracting tree metrics (height, diameter, volume).",
         "Designed PDAL/GeoPandas pipelines for reproducible, scalable model training across new forest sites."],
-    tech: ["React", "FastAPI", "Tailwind CSS", "WordPress", "H3.js", "Git"],
+    tech: ["React", "Tailwind CSS", "H3.js", "FastAPI", "Git"],
     link: "#",
   },  
   {

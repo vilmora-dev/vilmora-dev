@@ -25,8 +25,7 @@ const Contact: React.FC = () => {
     setErrorMessage("");
 
     try {
-      // Your PHP endpoint
-      const response = await fetch("http://127.0.0.1:8000/send-email", {
+      const response = await fetch("http://my-backend.morales-tech.net/send-email-git", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json" 

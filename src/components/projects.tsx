@@ -15,12 +15,12 @@ type Project = {
 const incProjects: Project[] = [
   {
     title: "Forest Carbon Modeling Platform",
-    role: "Data Scientist - Delta Rising Foundation",
+    role: "Software Engineer - Delta Rising Foundation",
     description:"Developed AI-powered forest carbon modeling platform, combining LiDAR, soil/climate data, and machine learning to deliver precise per-tree and per-plot sequestration estimates for donor proposals and scalable forestry projects.",
     list: ["Built LightGBM/XGBoost/Random Forest models for accurate carbon quantification, integrating ecology research for credibility.",
         "Engineered proprietary dataset from LiDAR + soil/climate data, extracting tree metrics (height, diameter, volume).",
         "Designed PDAL/GeoPandas pipelines for reproducible, scalable model training across new forest sites."],
-    tech: ["React", "Tailwind CSS", "H3.js", "FastAPI", "Git"],
+    tech: ["React", "Tailwind CSS", "H3.js", "FastAPI", "GEE", "Git"],
     link: "#",
   },  
   {

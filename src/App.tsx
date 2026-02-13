@@ -110,7 +110,7 @@ function App() {
         console.log(`
     ╔═══════════════════════════════════╗
     ║   Thanks for checking this out!   ║
-    ║   Made with ❤️ and lots of ☕      ║
+    ║   Made with ❤️ and lots of ☕    ║
     ╚═══════════════════════════════════╝
         `);
       }

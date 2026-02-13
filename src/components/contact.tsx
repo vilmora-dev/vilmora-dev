@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
     setErrorMessage("");
 
     try {
-      const response = await fetch("http://my-backend.morales-tech.net/send-email-git", {
+      const response = await fetch("https://my-backend.morales-tech.net/send-email-git", {
         method: "POST", 
         headers: { 
           "Content-Type": "application/json" 

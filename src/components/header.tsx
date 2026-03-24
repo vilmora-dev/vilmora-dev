@@ -24,7 +24,6 @@ const Header: React.FC = () => {
         <h1 className="mb-4 text-3xl font-semibold leading-tight sm:text-4xl">
           Hi, I&apos;m <span className="text-cyan-400">Jesus Morales</span>.
           <br />
-          I build useful web apps and tools.
         </h1>
         <p className="mb-6 text-md text-slate-300">
           Full‑stack developer with experience in React, TypeScript, Python, and

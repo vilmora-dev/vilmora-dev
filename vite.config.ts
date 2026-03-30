@@ -7,5 +7,5 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
-  base: '/vilmora-dev/'
+  base: '/Portfolio/'
 })

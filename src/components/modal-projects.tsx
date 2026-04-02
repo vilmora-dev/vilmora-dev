@@ -5,9 +5,10 @@ import taxSnap from '../assets/projects-listing/tax-snapshot.png';
 import weatherSnap from '../assets/projects-listing/weather-snapshot.png';
 import defacerSnap from '../assets/projects-listing/defacer-snapshot.png';
 import todoSnap from '../assets/projects-listing/todo-snapshot.png';
+import newSnap from '../assets/projects-listing/news-rss-scraper.png';
 
 type PersonalProject = {
-  id: string;
+  id: number;
   thumbnail?: string;
   title: string;
   url: string;
@@ -81,23 +82,15 @@ const PersonalProjectsModal: React.FC<PersonalProjectsModalProps> = ({
   // Your personal projects data
   const personalProjects: PersonalProject[] = [
     {
-      id: "1",
-      thumbnail: `${todoSnap}`,
-      title: "To-do App",
-      url: "https://github.com/vilmora-dev/to-do-app",
-      description: "Responsive todo application with drag-and-drop task reordering, local persistence, and clean UI.",
-      tags: ["React", "Typescript", "Tailwind CSS"]
+      id: 1,
+      thumbnail: `${taxSnap}`,
+      title: "2024 U.S. Federal Tax Estimator",
+      url: "https://github.com/vilmora-dev/Federal-Tax-Estimator-2024",
+      description: "A frontend-focused application that simulates U.S. federal income tax calculations for the 2024 tax year.",
+      tags: ["React", "JavaScript", "TypeScript", "Tailwind CSS"]
     },
     {
-      id: "2",
-      thumbnail: `${defacerSnap}`,
-      title: "Video Defacer App",
-      url: "https://github.com/vilmora-dev/video_defacer_app",
-      description: "App that provides an easy way to automatically blur or mask faces using the open-source deface library.",
-      tags: ["Python"]
-    },
-    {
-      id: "3",
+      id: 2,
       thumbnail: `${weatherSnap}`,
       title: "Weather Dashboard",
       url: "https://github.com/vilmora-dev/weather_app",
@@ -106,14 +99,29 @@ const PersonalProjectsModal: React.FC<PersonalProjectsModalProps> = ({
 
     },
     {
-      id: "4",
-      thumbnail: `${taxSnap}`,
-      title: "2024 U.S. Federal Tax Estimator",
-      url: "https://github.com/vilmora-dev/Federal-Tax-Estimator-2024",
-      description: "A frontend-focused application that simulates U.S. federal income tax calculations for the 2024 tax year.",
-      tags: ["React", "JavaScript", "TypeScript", "Tailwind CSS"]
+      id: 3,
+      thumbnail: `${defacerSnap}`,
+      title: "Video Defacer App",
+      url: "https://github.com/vilmora-dev/video_defacer_app",
+      description: "App that provides an easy way to automatically blur or mask faces using the open-source deface library.",
+      tags: ["Python"]
     },
-    
+    {
+      id: 4,
+      thumbnail: `${todoSnap}`,
+      title: "To-do App",
+      url: "https://github.com/vilmora-dev/to-do-app",
+      description: "Responsive todo application with drag-and-drop task reordering, local persistence, and clean UI.",
+      tags: ["React", "Typescript", "Tailwind CSS"]
+    },
+    {
+      id: 5,
+      thumbnail: `${newSnap}`,
+      title: "News Crawler + Scraper",
+      url: "https://github.com/vilmora-dev/news-rss-scraper",
+      description: "Crawls real RSS feeds from major outlets using Express 5 backend, applies semantic keyword classification for article categorization, and scrapes OG images when RSS lacks them.",
+      tags: ["React", "Typescript", "Tailwind CSS", "Express"]
+    },
   ];
 
   // Close on Escape key
@@ -164,9 +172,12 @@ const PersonalProjectsModal: React.FC<PersonalProjectsModalProps> = ({
         {/* Content */}
         <div className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {personalProjects.map((project) => (
-              <ImageCard key={project.id} project={project} />
-            ))}
+            {personalProjects
+              .sort((a, b) => b.id - a.id)
+              .map((project) => (
+                <ImageCard key={project.id} project={project} />
+              ))
+            }
           </div>
         </div>
 

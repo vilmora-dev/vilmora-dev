@@ -48,10 +48,10 @@ const Projects: React.FC = () => {
     description:
       "Portfolio of hands-on projects demonstrating full-stack web development and creative side projects built with modern tools.",
     list: [
+      "News Crawler + Scraper - Real-time RSS news monitoring",
       "To-Do App - Task management application",
-      "Tax Calculator – Dynamic financial tool", 
+      "Tax Calculator – Dynamic tax estimator for 2025 filings", 
       "Weather Dashboard – Real-time forecasts", 
-      "Video Defacer – Creative media processor", 
       "Among others..."],
     tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "APIs", "Python"],
     link: "#",

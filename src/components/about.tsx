@@ -25,17 +25,17 @@ const About: React.FC = () => {
         )}
         <div className="flex-1">
             <p className="mb-4 text-md text-slate-300 bg-slate-900/70 rounded px-3 py-2">
-                I&apos;m a Full-Stack Developer with a love for creating elegant and responsive 
-                web solutions to complex problems. Specializing in the MERN stack and TypeScript, 
-                I focus on building scalable architecture and intuitive user experiences 
-                that bridge the gap between back-end logic and front-end delight.
+                B.S. in Software Engineering with over 3 years building web applications and 1 year developing predictive models, 
+                plus hands-on experience in full-stack web development, geospatial data processing, and ML. 
+                Skilled in building end-to-end solutions—from data validation and feature engineering to backend integration and responsive frontend development.
+                Fluent in English and Spanish, with a collaborative communication style focused on measurable impact, reproducibility, 
+                and scalable, user-focused software solutions.
             </p>
             <p className="mb-4 text-md text-slate-300 bg-slate-900/70 rounded px-3 py-2">
                 My experience spans a diverse range of digital solutions, including responsive 
                 web design, secure authentication systems, and third-party API integrations. 
-                I&apos;ve worked on real-time data dashboards, content management systems, single 
-                page applications and consumer apps, always ensuring a balance between robust 
-                backend logic and fluid+engaging frontend design.
+                I&apos;ve worked on real-time data dashboards, content management systems, and single 
+                page applications.
             </p>
         </div>
         {isLargeScreen && (

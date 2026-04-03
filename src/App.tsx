@@ -138,7 +138,7 @@ function App() {
     <div className="select-none relative flex min-h-screen flex-col bg-slate-950 text-slate-50">
       <Navbar />
 
-      <div className="fixed left-0 top-0 h-screen w-full bg-black opacity-80 z-0">
+      <div className={`fixed left-0 top-0 h-screen w-full bg-black transition-all duration-900 ease-in-out ${currentEffect == "sphere" ? 'opacity-80' : 'opacity-50'} z-0`}>
         <Globe effect={currentEffect} scrollProgress={scrollProgress} scrollY={scrollY} />
       </div>
 

@@ -1,0 +1,256 @@
+@import "tailwindcss";
+@source "../src";
+
+/* ─────────────────────────────────────────
+   @theme — Tailwind v4 token registration
+   Exposes every design token as a Tailwind
+   utility so components can write:
+     text-accent       bg-surface      border-border
+     text-primary      bg-card         text-secondary
+     text-muted        bg-bg           text-accent-dim
+   instead of style={{ color: 'var(--color-accent)' }}
+───────────────────────────────────────── */
+@theme inline {
+  /* ── Colors ── */
+  --color-bg:             #020617;
+  --color-surface:        #0f172a;
+  --color-card:           #1e293b;
+  --color-border:         #1e293b;
+  --color-border-subtle:  #0f172a;
+
+  --color-primary:        #f8fafc;
+  --color-secondary:      #94a3b8;
+  --color-muted:          #475569;
+
+  --color-accent:         #22d3ee;
+  --color-accent-dim:     #0e7490;
+  --color-accent-glow:    rgba(34, 211, 238, 0.12);
+
+  /* ── Fonts ── */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+}
+
+/* ─────────────────────────────────────────
+   :root — raw CSS custom properties
+   Keep in sync with @theme above.
+   Used by: global CSS rules, GSAP, any
+   context that can't use Tailwind classes.
+───────────────────────────────────────── */
+:root {
+  /* Palette — mirrors @theme */
+  --color-bg:             #020617;
+  --color-bg-surface:     #0f172a;
+  --color-bg-card:        #1e293b;
+  --color-border:         #1e293b;
+  --color-border-subtle:  #0f172a;
+
+  --color-text-primary:   #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted:     #475569;
+
+  --color-accent:         #22d3ee;
+  --color-accent-dim:     #0e7490;
+  --color-accent-glow:    rgba(34, 211, 238, 0.12);
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  /* Spacing rhythm */
+  --section-px:    clamp(1rem, 5vw, 3rem);
+  --section-max-w: 1024px;
+
+  /* Transition timing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-expo:  cubic-bezier(0.7, 0, 0.84, 0);
+  --duration-fast:   200ms;
+  --duration-base:   400ms;
+  --duration-slow:   700ms;
+  --duration-xslow:  1200ms;
+}
+
+/* ─────────────────────────────────────────
+   Global base — inside @layer base so that
+   Tailwind utility classes always win.
+───────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scrollbar-gutter: stable;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  ul, ol {
+    list-style: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img, video {
+    max-width: 100%;
+    display: block;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  #root {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  /* Ambient glow */
+  #root::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        ellipse 80% 50% at 50% -10%,
+        rgba(34, 211, 238, 0.06) 0%,
+        transparent 70%
+      );
+  }
+}
+
+/* ─────────────────────────────────────────
+   Reduced motion: disable all transitions
+   and animations globally when the user
+   has requested it. Individual components
+   can hook into this via prefers-reduced-motion
+   in JS too, but this CSS rule is the
+   unconditional safety net.
+───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─────────────────────────────────────────
+   Section entrance animation
+   Triggered by data-section-active on the
+   parent <section> element.
+───────────────────────────────────────── */
+@keyframes section-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility section-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms ease, transform 400ms ease;
+
+  [data-section-active="true"] > & {
+    animation: section-enter var(--duration-slow) var(--ease-out-expo) both;
+  }
+  [data-section-active="false"] > & {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+/* ─────────────────────────────────────────
+   NavDots — label slide utility
+   Tailwind can't express max-width sliding
+   or multi-level group-hover in a single
+   class, so we handle it here.
+───────────────────────────────────────── */
+@utility nav-label {
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  white-space: nowrap;
+  transition:
+    max-width var(--duration-base) var(--ease-out-expo),
+    opacity   var(--duration-fast) ease;
+
+  /* Dot hovered → show this dot's label */
+  .nav-dot:hover & {
+    max-width: 80px;
+    opacity: 1;
+  }
+
+  /* Active dot → show label in accent color */
+  .nav-dot--active & {
+    max-width: 80px;
+    opacity: 1;
+    color: var(--color-accent);
+  }
+
+  /* Nav group hovered → reveal all labels */
+  .nav-dots-root:hover & {
+    max-width: 80px;
+    opacity: 1;
+  }
+}
+
+/* ─────────────────────────────────────────
+   MobileNav — hamburger → X animation
+   nth-child selectors can't be expressed
+   in Tailwind; kept here as a @utility.
+───────────────────────────────────────── */
+@utility hamburger-line {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-primary);
+  transform-origin: center;
+  transition:
+    transform var(--duration-base) var(--ease-out-expo),
+    opacity   var(--duration-fast) ease;
+}
+
+@utility hamburger-open {
+  /* Top line → rotates to form top of X */
+  & span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  /* Middle line → fades out */
+  & span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  /* Bottom line → rotates to form bottom of X */
+  & span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}

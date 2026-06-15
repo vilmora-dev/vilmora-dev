@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import cobachSnap      from '../../assets/projects/swgp.png'
 import taxSnap      from '../../assets/projects/tax-snapshot.png'
 import weatherSnap  from '../../assets/projects/weather-snapshot.png'
 import defacerSnap  from '../../assets/projects/defacer-snapshot.png'
@@ -52,6 +53,7 @@ const projects = [
     ],
     tech: ['React', 'Tailwind CSS', 'PHP', 'SQL'],
     type: 'client',
+    thumbnail: cobachSnap,
   },
   {
     title: 'News Crawler + Scraper',

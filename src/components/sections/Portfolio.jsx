@@ -20,7 +20,7 @@ const projects = [
       'Clean frontend UI for filtering and reviewing scraped grant listings.',
     ],
     tech: ['Python', 'Laravel', 'MySQL', 'GitHub Actions', 'PHP', 'Shared Hosting'],
-    link: 'https://github.com/vilmora-dev',
+    link: 'https://github.com/vilmora-dev/grant-dashboard',
     linkLabel: 'View on GitHub →',
     type: 'client',
     thumbnail: grantsSnap,

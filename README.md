@@ -13,7 +13,6 @@ I'm a passionate **Full-Stack Developer** with a love for creating elegant solut
 - Currently working on environmental impact assessment applications
 - Always learning and exploring new technologies
 - Interested in AI, web development, and creative coding
-- How to reach me: **jm0196@outlook.com**
 
 ---
 

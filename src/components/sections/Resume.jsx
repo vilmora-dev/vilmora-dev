@@ -164,7 +164,7 @@ const Resume = () => {
   const handlePrint = () => {
     // Load a hidden iframe with the PDF and immediately trigger print
     const iframe = iframeRef.current
-    iframe.src = '/resume.pdf'
+    iframe.src = `${import.meta.env.BASE_URL}resume.pdf`
     iframe.onload = () => {
       iframe.contentWindow.focus()
       iframe.contentWindow.print()

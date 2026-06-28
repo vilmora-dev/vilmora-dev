@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 /* Rotating quote card */
 const quotes = [
   { text: "You don't have to be great to start, but you have to start to be great.", author: "Zig Ziglar" },
-  { text: "It always seems impossible until it's done.", author: "Nelson Mandela" },
-  { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+  // { text: "It always seems impossible until it's done.", author: "Nelson Mandela" },
+  // { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
 ]
 
 const QuoteCard = () => {
